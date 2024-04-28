@@ -1,5 +1,5 @@
-import { isEqual } from "./../lib/utils/compare.util";
-describe("Compare tests", () => {
+import { isEqual, isNotEqual } from "./../lib/utils/compare.util";
+describe("isEqual tests", () => {
   test("should return false", () => {
     expect(isEqual("test", "Test")).toBeFalsy();
   });
@@ -65,5 +65,22 @@ describe("Compare tests", () => {
   });
   test("should return true", () => {
     expect(isEqual(["ahmet"], ["ahmet"])).toBeTruthy();
+  });
+});
+describe("isNotEqual tests", () => {
+  test("should return true", () => {
+    expect(isNotEqual(["test1"], ["test2"])).toBeTruthy();
+  });
+  test("should return true", () => {
+    expect(isNotEqual(1, 2)).toBeTruthy();
+  });
+  test("should return true", () => {
+    expect(isNotEqual("test1", 4)).toBeTruthy();
+  });
+  test("should return false", () => {
+    expect(isNotEqual(1, 1)).toBeFalsy();
+  });
+  test("should return true", () => {
+    expect(isNotEqual(undefined, null)).toBeTruthy();
   });
 });

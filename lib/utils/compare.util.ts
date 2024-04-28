@@ -32,3 +32,7 @@ export const isEqual = (valOne: any, valTwo: any): boolean => {
   }
   return valOne === valTwo;
 };
+
+export const isNotEqual = (valOne: any, valTwo: any): boolean => {
+  return !isEqual(valOne, valTwo);
+};
