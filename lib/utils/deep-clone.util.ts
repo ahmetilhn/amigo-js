@@ -1,4 +1,4 @@
-const deepClone = (val: any): typeof val => {
+export const deepClone = (val: any): typeof val => {
   if (val === null || typeof val !== "object") {
     return val;
   }
@@ -19,5 +19,3 @@ const deepClone = (val: any): typeof val => {
     return clonedObj;
   }
 };
-
-export default deepClone;
