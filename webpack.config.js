@@ -25,7 +25,6 @@ module.exports = {
     library: {
       name: "amigo-js",
       type: "umd",
-      export: "default",
       umdNamedDefine: true,
     },
   },

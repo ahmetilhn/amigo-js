@@ -9,3 +9,6 @@ yarn.lock
 package-lock.json
 assets
 test
+tsconfig.json
+.eslintrc.json
+.babelrc
