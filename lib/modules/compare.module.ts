@@ -1,4 +1,4 @@
-import { isArray, isObject } from "./type.module";
+import { isArray, isDate, isObject } from "./type.module";
 
 export const isEqual = (valOne: any, valTwo: any): boolean => {
   if (valOne === valTwo) return true;
@@ -8,9 +8,16 @@ export const isEqual = (valOne: any, valTwo: any): boolean => {
     isObject(valOne) &&
     isObject(valTwo) &&
     !Object.keys(valOne).length &&
-    !Object.keys(valTwo).length
+    !Object.keys(valTwo).length &&
+    !isDate(valOne) &&
+    !isDate(valTwo)
   )
     return true;
+  if (isDate(valOne) && isDate(valTwo)) {
+    valOne = valOne as Date;
+    valTwo = valTwo as Date;
+    return isEqual(valOne.getTime(), valTwo.getTime());
+  }
   if (isArray(valOne) && isArray(valTwo) && !valOne.length && !valTwo.length)
     return true;
 

@@ -1,5 +1,6 @@
 import {
   ARRAY_NODE,
+  DATE_NODE,
   FUNCTION_NODE,
   NUMBER_NODE,
 } from "../constants/node.constant";
@@ -21,4 +22,8 @@ export const isNumber = (val: any): boolean => {
   return (
     (typeof val === "number" && !isNaN(val)) || getNode(val) === NUMBER_NODE
   );
+};
+
+export const isDate = (val: any): boolean => {
+  return typeof val === "object" && getNode(val) === DATE_NODE;
 };

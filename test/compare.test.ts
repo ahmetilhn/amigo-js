@@ -76,6 +76,9 @@ describe("isEqual tests", () => {
       isEqual(new Date("2011-10-10"), new Date("2011-10-10"))
     ).toBeTruthy();
   });
+  test("should return false", () => {
+    expect(isEqual(new Date("2011-10-12"), new Date("2011-10-10"))).toBeFalsy();
+  });
 });
 describe("isNotEqual tests", () => {
   test("should return true", () => {
