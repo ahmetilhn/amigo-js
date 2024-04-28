@@ -7,8 +7,8 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(?:ts|mjs|cjs)$/,
-        exclude: [/node_modules/, /demo/, /build/, /assets/],
+        test: /\.(?:ts|mts|cts)$/,
+        exclude: [/node_modules/, /demo/, /build/, /assets/, /test/],
         use: {
           loader: "babel-loader",
         },
@@ -16,7 +16,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: [".js", ".jsx"],
+    extensions: [".ts", ".tsx"],
   },
   externals: [nodeExternals()],
   output: {
