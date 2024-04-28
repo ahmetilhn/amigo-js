@@ -1,6 +1,11 @@
-export { isArray, isFunction, isObject, isNumber } from "./utils/type.util";
-export { deepClone } from "./utils/deep-clone.util";
-export { debounce } from "./utils/debounce.util";
-export { getPaths } from "./utils/url.util";
-export { getQueries } from "./utils/url.util";
-export { isEqual, isNotEqual } from "./utils/compare.util";
+export { isArray, isFunction, isObject, isNumber } from "./modules/type.module";
+export { deepClone } from "./modules/deep-clone.module";
+export { debounce } from "./modules/debounce.module";
+export { getPaths, getQueries } from "./modules/url.module";
+export {
+  isEqual,
+  isNotEqual,
+  isBefore,
+  isAfter,
+} from "./modules/compare.module";
+export { isDateAfter, isDateBefore } from "./modules/date.module";

@@ -1,4 +1,4 @@
-import { debounce } from "../lib/utils/debounce.util";
+import { debounce } from "../lib/modules/debounce.module";
 
 describe("Debounce tests", () => {
   const mockFn = jest.fn();

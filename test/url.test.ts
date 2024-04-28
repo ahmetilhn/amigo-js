@@ -1,4 +1,4 @@
-import { getPaths, getQueries } from "./../lib/utils/url.util";
+import { getPaths, getQueries } from "./../lib/modules/url.module";
 
 describe("Url util tests", () => {
   const mockUrl: URL = new URL(

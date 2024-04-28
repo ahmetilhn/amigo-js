@@ -1,4 +1,4 @@
-import { deepClone } from "../lib/utils/deep-clone.util";
+import { deepClone } from "../lib/modules/deep-clone.module";
 
 describe("Deep clone tests", () => {
   test("should return string after deepClone", () => {

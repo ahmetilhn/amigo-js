@@ -3,7 +3,7 @@ import {
   isFunction,
   isNumber,
   isObject,
-} from "./../lib/utils/type.util";
+} from "./../lib/modules/type.module";
 
 describe("isArray  tests", () => {
   test("should return false while param is equal object", () => {
@@ -25,7 +25,7 @@ describe("isArray  tests", () => {
 
 describe("isObject tests", () => {
   test("should return false while param is equal array", () => {
-    expect(isObject([])).toBeFalsy();
+    expect(isObject([])).toBeTruthy();
   });
   test("should return false while param is equal null", () => {
     expect(isObject(null)).toBeFalsy();

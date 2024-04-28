@@ -1,4 +1,4 @@
-import { isArray, isObject } from "./type.util";
+import { isArray, isObject } from "./type.module";
 
 export const isEqual = (valOne: any, valTwo: any): boolean => {
   if (valOne === valTwo) return true;
@@ -35,4 +35,11 @@ export const isEqual = (valOne: any, valTwo: any): boolean => {
 
 export const isNotEqual = (valOne: any, valTwo: any): boolean => {
   return !isEqual(valOne, valTwo);
+};
+
+export const isBefore = (numberOne: number, numberTwo: number): boolean => {
+  return numberOne < numberTwo;
+};
+export const isAfter = (numberOne: number, numberTwo: number): boolean => {
+  return !isBefore(numberOne, numberTwo);
 };
