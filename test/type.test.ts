@@ -1,5 +1,6 @@
 import {
   isArray,
+  isDate,
   isFunction,
   isNumber,
   isObject,
@@ -77,5 +78,20 @@ describe("isNumber tests", () => {
   });
   test("should return true while param is equal number", () => {
     expect(isNumber(191)).toBeTruthy();
+  });
+});
+
+describe("isDate tests", () => {
+  test("should return false", () => {
+    expect(isDate(Date)).toBeFalsy();
+  });
+  test("should return false", () => {
+    expect(isDate(null)).toBeFalsy();
+  });
+  test("should return false", () => {
+    expect(isDate("12-22-2023")).toBeFalsy();
+  });
+  test("should return true", () => {
+    expect(isDate(new Date())).toBeTruthy();
   });
 });
