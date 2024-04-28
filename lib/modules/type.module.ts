@@ -1,5 +1,6 @@
 import {
   ARRAY_NODE,
+  BOOLEAN_NODE,
   DATE_NODE,
   FUNCTION_NODE,
   NUMBER_NODE,
@@ -26,4 +27,12 @@ export const isNumber = (val: any): boolean => {
 
 export const isDate = (val: any): boolean => {
   return typeof val === "object" && getNode(val) === DATE_NODE;
+};
+
+export const isBoolean = (val: any): boolean => {
+  return (
+    typeof val === "boolean" &&
+    (val === true || val === false) &&
+    getNode(val) === BOOLEAN_NODE
+  );
 };

@@ -1,4 +1,11 @@
-export { isArray, isFunction, isObject, isNumber } from "./modules/type.module";
+export {
+  isArray,
+  isFunction,
+  isObject,
+  isNumber,
+  isDate,
+  isBoolean,
+} from "./modules/type.module";
 export { deepClone } from "./modules/deep-clone.module";
 export { debounce } from "./modules/debounce.module";
 export { getPaths, getQueries } from "./modules/url.module";
