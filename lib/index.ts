@@ -15,3 +15,4 @@ export {
   isAfter,
 } from "./modules/compare.module";
 export { isDateAfter, isDateBefore } from "./modules/date.module";
+export { sleep } from "./modules/sleep.module";
