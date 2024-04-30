@@ -1,3 +1,12 @@
+/**
+ * Return cloned val
+ * @param {*} val - value to be processed
+ * @returns {*} - return type of value
+ * @example
+ * deepClone({test: "test"}) // {test: "test"}
+ * deepClone("Test") // test
+ * deepClone(["x", "y"]) // ["x", "y"]
+ */
 export const deepClone = (val: any): typeof val => {
   if (val === null || typeof val !== "object") {
     return val;
