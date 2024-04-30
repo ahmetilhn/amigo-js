@@ -1,4 +1,5 @@
 /**
+ * Await the method until time
  * @param {number} time - time for delay(typeof ms)
  * @returns {Promise}
  * @example

@@ -80,6 +80,9 @@ describe("isNumber tests", () => {
   test("should return true while param is equal number", () => {
     expect(isNumber(191)).toBeTruthy();
   });
+  test("should return true while param is equal NaN", () => {
+    expect(isNumber(NaN)).toBeTruthy();
+  });
 });
 
 describe("isDate tests", () => {
