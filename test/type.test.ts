@@ -41,6 +41,9 @@ describe("isObject tests", () => {
   test("should return true while param is equal object", () => {
     expect(isObject({})).toBeTruthy();
   });
+  test("should return true while param is equal date object", () => {
+    expect(isObject(new Date())).toBeTruthy();
+  });
 });
 
 describe("isFunction tests", () => {
