@@ -49,6 +49,9 @@ describe("isDeepEqual tests", () => {
     expect(isDeepEqual([], [])).toBeTruthy();
   });
   test("should return true", () => {
+    expect(isDeepEqual([10, 2], [10, 2])).toBeTruthy();
+  });
+  test("should return true", () => {
     expect(isDeepEqual(undefined, undefined)).toBeTruthy();
   });
   test("should return true", () => {

@@ -8,7 +8,7 @@ export default [
     output: {
       file: "./build/index.js",
       format: "umd",
-      name: "memofy",
+      name: "amigoJS",
     },
     plugins: [
       typescript({
