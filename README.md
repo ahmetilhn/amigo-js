@@ -1,4 +1,4 @@
-# Amigo JS 
+# Amigo JS
 
 Amigo JS offers developers a powerful and easy-to-use toolset. With its clean, modular and scalable code structure, it accelerates development processes and reduces code complexity. With a wide range of functions, it offers ready-made methods for solving common problems.
 
@@ -74,34 +74,34 @@ expect(clonedVal).toEqual(clonedVal); // soft equal
 
 ## Compare
 
-### isEqual
+### isDeepEqual
 
 Checks the equality of two values.
 
 ###### Function Signature
 
 ```js
-isEqual(valOne: any, valTwo: any): boolean
+isDeepEqual(valOne: any, valTwo: any): boolean
 ```
 
 ###### Examples
 
 ```js
-isEqual(10, 10); // true
+isDeepEqual(10, 10); // true
 
-isEqual("test", 1); // false
+isDeepEqual("test", 1); // false
 
-isEqual(null, 1); // false
+isDeepEqual(null, 1); // false
 
-isEqual(null, NaN); // false
+isDeepEqual(null, NaN); // false
 
-isEqual(NaN, NaN); // false
+isDeepEqual(NaN, NaN); // false
 
-isEqual({ name: "john" }, { name: "john" }); // true
+isDeepEqual({ name: "john" }, { name: "john" }); // true
 
-isEqual(["john"], ["john"]); // true
+isDeepEqual(["john"], ["john"]); // true
 
-isEqual([{ key: "value" }], [{ key: "value" }]); // true
+isDeepEqual([{ key: "value" }], [{ key: "value" }]); // true
 ```
 
 ### isNotEqual

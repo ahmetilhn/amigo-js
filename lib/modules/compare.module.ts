@@ -1,6 +1,6 @@
 import { isArray, isDate, isObject } from "./type.module";
 
-export const isEqual = (valOne: any, valTwo: any): boolean => {
+export const isDeepEqual = (valOne: any, valTwo: any): boolean => {
   if (valOne === valTwo) return true;
   if (typeof valOne !== typeof valTwo || valOne === null || valTwo === null)
     return false;
@@ -16,7 +16,7 @@ export const isEqual = (valOne: any, valTwo: any): boolean => {
   if (isDate(valOne) && isDate(valTwo)) {
     valOne = valOne as Date;
     valTwo = valTwo as Date;
-    return isEqual(valOne.getTime(), valTwo.getTime());
+    return isDeepEqual(valOne.getTime(), valTwo.getTime());
   }
   if (isArray(valOne) && isArray(valTwo) && !valOne.length && !valTwo.length)
     return true;
@@ -24,7 +24,7 @@ export const isEqual = (valOne: any, valTwo: any): boolean => {
   if (isObject(valOne) || isObject(valTwo)) {
     if (Object.keys(valOne).length !== Object.keys(valTwo).length) return false;
     for (const key in valOne) {
-      return isEqual(valOne[key], valTwo[key]);
+      return isDeepEqual(valOne[key], valTwo[key]);
     }
   }
   if (isArray(valOne) || isArray(valTwo)) {
@@ -34,12 +34,12 @@ export const isEqual = (valOne: any, valTwo: any): boolean => {
     if (keysOfValOne.length !== keysOfValTwo.length) return false;
 
     for (let i = 0; i < keysOfValOne.length; i++) {
-      return isEqual(valOne[i], valTwo[i]);
+      return isDeepEqual(valOne[i], valTwo[i]);
     }
   }
   return valOne === valTwo;
 };
 
 export const isNotEqual = (valOne: any, valTwo: any): boolean => {
-  return !isEqual(valOne, valTwo);
+  return !isDeepEqual(valOne, valTwo);
 };

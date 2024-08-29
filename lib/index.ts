@@ -7,4 +7,4 @@ export {
   isBoolean,
 } from "./modules/type.module";
 export { deepClone } from "./modules/clone.module";
-export { isEqual, isNotEqual } from "./modules/compare.module";
+export { isDeepEqual, isNotEqual } from "./modules/compare.module";

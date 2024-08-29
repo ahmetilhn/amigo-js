@@ -1,78 +1,80 @@
-import { isEqual, isNotEqual } from "../lib/modules/compare.module";
-describe("isEqual tests", () => {
+import { isDeepEqual, isNotEqual } from "../lib/modules/compare.module";
+describe("isDeepEqual tests", () => {
   test("should return false", () => {
-    expect(isEqual("test", "Test")).toBeFalsy();
+    expect(isDeepEqual("test", "Test")).toBeFalsy();
   });
   test("should return false", () => {
-    expect(isEqual("test", 1)).toBeFalsy();
+    expect(isDeepEqual("test", 1)).toBeFalsy();
   });
   test("should return false", () => {
-    expect(isEqual(2, "Test")).toBeFalsy();
+    expect(isDeepEqual(2, "Test")).toBeFalsy();
   });
   test("should return false", () => {
-    expect(isEqual(1, 2)).toBeFalsy();
+    expect(isDeepEqual(1, 2)).toBeFalsy();
   });
   test("should return false", () => {
-    expect(isEqual(null, 1)).toBeFalsy();
+    expect(isDeepEqual(null, 1)).toBeFalsy();
   });
   test("should return false", () => {
-    expect(isEqual(null, NaN)).toBeFalsy();
+    expect(isDeepEqual(null, NaN)).toBeFalsy();
   });
   test("should return false", () => {
-    expect(isEqual(null, undefined)).toBeFalsy();
+    expect(isDeepEqual(null, undefined)).toBeFalsy();
   });
   test("should return false", () => {
-    expect(isEqual(NaN, undefined)).toBeFalsy();
+    expect(isDeepEqual(NaN, undefined)).toBeFalsy();
   });
   test("should return false", () => {
-    expect(isEqual(NaN, NaN)).toBeFalsy();
+    expect(isDeepEqual(NaN, NaN)).toBeFalsy();
   });
   test("should return false", () => {
-    expect(isEqual({ test: 1 }, { test: 2 })).toBeFalsy();
+    expect(isDeepEqual({ test: 1 }, { test: 2 })).toBeFalsy();
   });
   test("should return false", () => {
-    expect(isEqual(["ahmet"], { test: 2 })).toBeFalsy();
+    expect(isDeepEqual(["ahmet"], { test: 2 })).toBeFalsy();
   });
   test("should return false", () => {
-    expect(isEqual(["ahmet"], ["metin"])).toBeFalsy();
+    expect(isDeepEqual(["ahmet"], ["metin"])).toBeFalsy();
   });
   test("should return true", () => {
-    expect(isEqual(null, null)).toBeTruthy();
+    expect(isDeepEqual(null, null)).toBeTruthy();
   });
   test("should return true", () => {
-    expect(isEqual(1, 1)).toBeTruthy();
+    expect(isDeepEqual(1, 1)).toBeTruthy();
   });
   test("should return true", () => {
-    expect(isEqual("2", "2")).toBeTruthy();
+    expect(isDeepEqual("2", "2")).toBeTruthy();
   });
   test("should return true", () => {
-    expect(isEqual([], [])).toBeTruthy();
+    expect(isDeepEqual([], [])).toBeTruthy();
   });
   test("should return true", () => {
-    expect(isEqual(undefined, undefined)).toBeTruthy();
+    expect(isDeepEqual(undefined, undefined)).toBeTruthy();
   });
   test("should return true", () => {
-    expect(isEqual(null, null)).toBeTruthy();
+    expect(isDeepEqual(null, null)).toBeTruthy();
   });
   test("should return true", () => {
-    expect(isEqual({}, {})).toBeTruthy();
+    expect(isDeepEqual({}, {})).toBeTruthy();
   });
   test("should return true", () => {
-    expect(isEqual({ name: "test" }, { name: "test" })).toBeTruthy();
+    expect(isDeepEqual({ name: "test" }, { name: "test" })).toBeTruthy();
   });
   test("should return true", () => {
-    expect(isEqual([{ key: "value" }], [{ key: "value" }])).toBeTruthy();
+    expect(isDeepEqual([{ key: "value" }], [{ key: "value" }])).toBeTruthy();
   });
   test("should return true", () => {
-    expect(isEqual(["ahmet"], ["ahmet"])).toBeTruthy();
+    expect(isDeepEqual(["ahmet"], ["ahmet"])).toBeTruthy();
   });
   test("should return true", () => {
     expect(
-      isEqual(new Date("2011-10-10"), new Date("2011-10-10"))
+      isDeepEqual(new Date("2011-10-10"), new Date("2011-10-10"))
     ).toBeTruthy();
   });
   test("should return false", () => {
-    expect(isEqual(new Date("2011-10-12"), new Date("2011-10-10"))).toBeFalsy();
+    expect(
+      isDeepEqual(new Date("2011-10-12"), new Date("2011-10-10"))
+    ).toBeFalsy();
   });
 });
 describe("isNotEqual tests", () => {
