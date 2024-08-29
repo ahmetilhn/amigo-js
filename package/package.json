@@ -5,7 +5,6 @@
   "author": "Ahmet ilhan <ahmetilhan.dev@gmail.com>",
   "license": "MIT",
   "main": "build/index.js",
-  "types": "build/index.d.ts",
   "publisher": "Ahmet ilhan",
   "repository": "https://github.com/ahmetilhn/amigo-js.git",
   "scripts": {
