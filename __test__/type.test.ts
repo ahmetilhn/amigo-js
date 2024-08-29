@@ -5,7 +5,7 @@ import {
   isFunction,
   isNumber,
   isObject,
-} from "./../lib/modules/type.module";
+} from "../lib/modules/type.module";
 
 describe("isArray  tests", () => {
   test("should return false while param is equal object", () => {

@@ -1,9 +1,4 @@
-import {
-  isAfter,
-  isBefore,
-  isEqual,
-  isNotEqual,
-} from "../lib/modules/compare.module";
+import { isEqual, isNotEqual } from "../lib/modules/compare.module";
 describe("isEqual tests", () => {
   test("should return false", () => {
     expect(isEqual("test", "Test")).toBeFalsy();
@@ -95,23 +90,5 @@ describe("isNotEqual tests", () => {
   });
   test("should return true", () => {
     expect(isNotEqual(undefined, null)).toBeTruthy();
-  });
-});
-
-describe("isBefore tests", () => {
-  test("should return false", () => {
-    expect(isBefore(2, 1)).toBeFalsy();
-  });
-  test("should return true", () => {
-    expect(isBefore(3, 5)).toBeTruthy();
-  });
-});
-
-describe("isAfter tests", () => {
-  test("should return true", () => {
-    expect(isAfter(2, 1)).toBeTruthy();
-  });
-  test("should return false", () => {
-    expect(isAfter(3, 5)).toBeFalsy();
   });
 });
