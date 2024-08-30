@@ -21,11 +21,12 @@ export const isDeepEqual = (valOne: any, valTwo: any): boolean => {
   if (isArray(valOne) && isArray(valTwo) && !valOne.length && !valTwo.length)
     return true;
   if (isArray(valOne) || isArray(valTwo)) {
-    let _isDiff = false;
-    for (let i = 0; i < valOne.length; i++) {
-      _isDiff = isDeepEqual(valOne[i], valTwo[i]);
+    let _i = 0;
+    while (_i < valOne.length) {
+      if (!isDeepEqual(valOne[_i], valTwo[_i])) return false;
+      _i++;
     }
-    return _isDiff;
+    return true;
   }
   if (isObject(valOne) || isObject(valTwo)) {
     if (Object.keys(valOne).length !== Object.keys(valTwo).length) return false;

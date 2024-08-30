@@ -227,4 +227,19 @@ describe("isNotEqual tests", () => {
       )
     ).toBeFalsy();
   });
+  test("should return false", () => {
+    expect(
+      isDeepEqual(["this is test subject", "test"], ["this is test", "test"])
+    ).toBeFalsy();
+  });
+  test("should return false", () => {
+    expect(
+      isDeepEqual(["this is test", "test"], ["this is test", "test"])
+    ).toBeTruthy();
+  });
+  test("should return false", () => {
+    expect(
+      isDeepEqual(["this is test", "test"], ["this is test", "demo"])
+    ).toBeFalsy();
+  });
 });
