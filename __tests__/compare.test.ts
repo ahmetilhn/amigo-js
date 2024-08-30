@@ -96,4 +96,135 @@ describe("isNotEqual tests", () => {
   test("should return true", () => {
     expect(isNotEqual(undefined, null)).toBeTruthy();
   });
+  test("should return false", () => {
+    expect(isDeepEqual([90, 5555552], [90, 5555553])).toBeFalsy();
+  });
+  test("should return false", () => {
+    expect(isDeepEqual(["a", "b"], ["a", "a"])).toBeFalsy();
+  });
+  test("should return false", () => {
+    expect(isDeepEqual(["a", { name: "Ahmet" }], ["a", "a"])).toBeFalsy();
+  });
+  test("should return true", () => {
+    expect(
+      isDeepEqual(["a", { name: "Ahmet" }], ["a", { name: "Ahmet" }])
+    ).toBeTruthy();
+  });
+  test("should return true", () => {
+    expect(
+      isDeepEqual(
+        ["a", { name: "Ahmet" }],
+        [
+          "a",
+          {
+            name: "Ahmet",
+            bio: {
+              age: 24,
+              profession: "Developer",
+              skills: ["javascript", "typescript"],
+            },
+          },
+        ]
+      )
+    ).toBeFalsy();
+  });
+  test("should return true", () => {
+    expect(
+      isDeepEqual(
+        [
+          "a",
+          {
+            name: "Ahmet",
+            bio: {
+              age: 24,
+              profession: "Developer",
+              skills: ["javascript", "typescript"],
+            },
+          },
+        ],
+        [
+          "a",
+          {
+            name: "Ahmet",
+            bio: {
+              age: 24,
+              profession: "Developer",
+              skills: ["javascript", "typescript"],
+            },
+          },
+        ]
+      )
+    ).toBeTruthy();
+  });
+  test("should return true", () => {
+    expect(
+      isDeepEqual(
+        [
+          "a",
+          {
+            name: "Ahmet",
+            bio: {
+              age: 24,
+              profession: "Developer",
+              skills: ["javascript", "typescript"],
+            },
+          },
+        ],
+        {
+          a: {
+            name: "Ahmet",
+            bio: {
+              age: 24,
+              profession: "Developer",
+              skills: ["javascript", "typescript"],
+            },
+          },
+        }
+      )
+    ).toBeFalsy();
+  });
+  test("should return true", () => {
+    expect(
+      isDeepEqual(
+        {
+          name: "Ahmet",
+          bio: {
+            age: 24,
+            profession: "Developer",
+            skills: ["javascript", "typescript"],
+          },
+        },
+        {
+          name: "Ahmet",
+          bio: {
+            age: 24,
+            profession: "Developer",
+            skills: ["javascript", "typescript"],
+          },
+        }
+      )
+    ).toBeTruthy();
+  });
+  test("should return true", () => {
+    expect(
+      isDeepEqual(
+        {
+          name: "Ahmet",
+          bio: {
+            age: 24,
+            profession: "Developer",
+            skills: ["javascript", "typescript"],
+          },
+        },
+        {
+          name: "Ahmet",
+          bio: {
+            age: 24,
+            profession: "Developer",
+            skills: ["javascript", "type"],
+          },
+        }
+      )
+    ).toBeFalsy();
+  });
 });

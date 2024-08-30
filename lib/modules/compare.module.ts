@@ -20,23 +20,22 @@ export const isDeepEqual = (valOne: any, valTwo: any): boolean => {
   }
   if (isArray(valOne) && isArray(valTwo) && !valOne.length && !valTwo.length)
     return true;
-
+  if (isArray(valOne) || isArray(valTwo)) {
+    let _isDiff = false;
+    for (let i = 0; i < valOne.length; i++) {
+      _isDiff = isDeepEqual(valOne[i], valTwo[i]);
+    }
+    return _isDiff;
+  }
   if (isObject(valOne) || isObject(valTwo)) {
     if (Object.keys(valOne).length !== Object.keys(valTwo).length) return false;
+    let _isDiff = false;
     for (const key in valOne) {
-      return isDeepEqual(valOne[key], valTwo[key]);
+      _isDiff = isDeepEqual(valOne[key], valTwo[key]);
     }
+    return _isDiff;
   }
-  if (isArray(valOne) || isArray(valTwo)) {
-    const keysOfValOne = Object.keys(valOne);
-    const keysOfValTwo = Object.keys(valTwo);
 
-    if (keysOfValOne.length !== keysOfValTwo.length) return false;
-
-    for (let i = 0; i < keysOfValOne.length; i++) {
-      return isDeepEqual(valOne[i], valTwo[i]);
-    }
-  }
   return valOne === valTwo;
 };
 
