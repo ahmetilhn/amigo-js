@@ -242,4 +242,31 @@ describe("isNotEqual tests", () => {
       isDeepEqual(["this is test", "test"], ["this is test", "demo"])
     ).toBeFalsy();
   });
+
+  test("should return false when passed array of array and boolean", () => {
+    expect(
+      isDeepEqual(
+        [
+          [
+            {
+              countryCode: "+90",
+              areaCode: "532",
+              phoneNumber: "1111111",
+              extensionNumber: "Fax",
+              phoneType: "MOBILE_PHONE",
+            },
+            {
+              countryCode: "+90",
+              areaCode: "532",
+              phoneNumber: "1111111",
+              extensionNumber: "",
+              phoneType: "FAX",
+            },
+          ],
+          true,
+        ],
+        [{ price: 10 }]
+      )
+    ).toBeFalsy();
+  });
 });
