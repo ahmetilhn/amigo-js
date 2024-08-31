@@ -8,7 +8,8 @@ const deepClone = <T extends object>(val: NonNullable<T>): T => {
 
     // @ts-ignore: Unreachable code error
     val.forEach((item: unknown) => {
-      clonedArr.push(item);
+      // @ts-ignore: Unreachable code error
+      clonedArr.push(isObject(item) ? deepClone(item) : item);
     });
     return clonedArr as T;
   }
