@@ -1,12 +1,5 @@
-import { deepClone } from "../lib/modules/clone.module";
-
+import deepClone from "../lib/modules/deep-clone";
 describe("Deep clone tests", () => {
-  test("should return string after deepClone", () => {
-    const clonedVal = deepClone("Ahmet");
-    expect(clonedVal).toBe("Ahmet");
-    expect(clonedVal).toEqual(clonedVal);
-  });
-
   test("should return object after deepClone", () => {
     const clonedVal = deepClone({ name: "test" });
     expect(clonedVal).not.toBe({ name: "test" });

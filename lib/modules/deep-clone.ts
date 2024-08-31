@@ -1,7 +1,7 @@
-import { isArray } from "./type.module";
-
-export const deepClone = <T extends object>(val: NonNullable<T>): T => {
-  if (typeof val !== "object") return val;
+import isArray from "./is-array";
+import isObject from "./is-object";
+const deepClone = <T extends object>(val: NonNullable<T>): T => {
+  if (!isObject(val)) return val;
 
   if (isArray(val)) {
     const clonedArr: unknown[] = [];
@@ -22,3 +22,5 @@ export const deepClone = <T extends object>(val: NonNullable<T>): T => {
   }
   return clonedObj as T;
 };
+
+export default deepClone;

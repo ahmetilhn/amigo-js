@@ -64,30 +64,6 @@ isDeepEqual(["john"], ["john"]); // true
 isDeepEqual([{ key: "value" }], [{ key: "value" }]); // true
 ```
 
-### isNotEqual
-
-Checks the not equality of two values.
-
-###### Function Signature
-
-```js
-isNotEqual(valOne: any, valTwo: any): boolean
-```
-
-###### Examples
-
-```js
-isNotEqual(10, 10); // false
-
-isNotEqual("test", 1); // true
-
-isNotEqual({ name: "john" }, { name: "john" }); // false
-
-isNotEqual(["john"], ["john"]); // true
-
-isNotEqual([{ key: "value" }], [{ key: "value" }]); // false
-```
-
 ## Type Check
 
 ### isObject
@@ -188,7 +164,7 @@ isNumber(1); // true
 isNumber("1"); // false
 ```
 
-### isNumber
+### isFunction
 
 Check if val is an function
 

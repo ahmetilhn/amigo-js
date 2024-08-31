@@ -1,6 +1,6 @@
-import { isArray, isDate, isObject } from "./type.module";
+import { isArray, isDate, isObject } from "..";
 
-export const isDeepEqual = (valOne: any, valTwo: any): boolean => {
+const isDeepEqual = (valOne: any, valTwo: any): boolean => {
   if (valOne === valTwo) return true;
   if (typeof valOne !== typeof valTwo || valOne === null || valTwo === null)
     return false;
@@ -40,6 +40,4 @@ export const isDeepEqual = (valOne: any, valTwo: any): boolean => {
   return valOne === valTwo;
 };
 
-export const isNotEqual = (valOne: any, valTwo: any): boolean => {
-  return !isDeepEqual(valOne, valTwo);
-};
+export default isDeepEqual;
