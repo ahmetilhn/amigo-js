@@ -6,7 +6,7 @@ export const isArray = (val: any): boolean => {
 };
 
 export const isObject = (val: any): boolean => {
-  return val !== null && (typeof val === "object" || typeof val === "function");
+  return val !== null && typeof val === "object";
 };
 
 export const isFunction = (val: any): boolean => {

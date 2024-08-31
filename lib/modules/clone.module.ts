@@ -1,21 +1,24 @@
-export const deepClone = (val: any): typeof val => {
-  if (val === null || typeof val !== "object") {
-    return val;
+import { isArray } from "./type.module";
+
+export const deepClone = <T extends object>(val: NonNullable<T>): T => {
+  if (typeof val !== "object") return val;
+
+  if (isArray(val)) {
+    const clonedArr: unknown[] = [];
+
+    // @ts-ignore: Unreachable code error
+    val.forEach((item: unknown) => {
+      clonedArr.push(item);
+    });
+    return clonedArr as T;
   }
 
-  if (Array.isArray(val)) {
-    const clonedArr: any[] = [];
-    for (let i = 0; i < val.length; i++) {
-      clonedArr[i] = deepClone(val[i]);
+  const clonedObj: Record<keyof T, T[keyof T]> = {} as T;
+  for (const key in val) {
+    if (Object.prototype.hasOwnProperty.call(val, key)) {
+      // @ts-ignore: Unreachable code error
+      clonedObj[key] = deepClone(val[key]);
     }
-    return clonedArr;
-  } else {
-    const clonedObj: Record<string, any> = {};
-    for (const key in val) {
-      if (Object.prototype.hasOwnProperty.call(val, key)) {
-        clonedObj[key] = deepClone(val[key]);
-      }
-    }
-    return clonedObj;
   }
+  return clonedObj as T;
 };
