@@ -19,6 +19,7 @@ const isDeepEqual = (valOne: any, valTwo: any): boolean => {
     return isDeepEqual(valOne.getTime(), valTwo.getTime());
   } else if (isArray(valOne) && isArray(valTwo)) {
     if (!valOne.length && !valTwo.length) return true;
+    else if (valOne.length !== valTwo.length) return false;
     let _i = 0;
     while (_i < valOne.length) {
       if (!isDeepEqual(valOne[_i], valTwo[_i])) return false;
