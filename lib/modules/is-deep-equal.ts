@@ -1,4 +1,4 @@
-import { isArray, isDate, isObject } from "..";
+import { isArray, isDate, isFunction, isObject } from "..";
 
 const isDeepEqual = (valOne: any, valTwo: any): boolean => {
   if (valOne === valTwo) return true;
@@ -17,24 +17,22 @@ const isDeepEqual = (valOne: any, valTwo: any): boolean => {
     valOne = valOne as Date;
     valTwo = valTwo as Date;
     return isDeepEqual(valOne.getTime(), valTwo.getTime());
-  }
-  if (isArray(valOne) && isArray(valTwo) && !valOne.length && !valTwo.length)
-    return true;
-  if (isArray(valOne) || isArray(valTwo)) {
+  } else if (isArray(valOne) && isArray(valTwo)) {
+    if (!valOne.length && !valTwo.length) return true;
     let _i = 0;
     while (_i < valOne.length) {
       if (!isDeepEqual(valOne[_i], valTwo[_i])) return false;
       _i++;
     }
     return true;
-  }
-  if (isObject(valOne) || isObject(valTwo)) {
+  } else if (isObject(valOne) && isObject(valTwo)) {
     if (Object.keys(valOne).length !== Object.keys(valTwo).length) return false;
-    let _isDiff = false;
     for (const key in valOne) {
-      _isDiff = isDeepEqual(valOne[key], valTwo[key]);
+      if (!isDeepEqual(valOne[key], valTwo[key])) return false;
     }
-    return _isDiff;
+    return true;
+  } else if (isFunction(valOne) && isFunction(valTwo)) {
+    return isDeepEqual(valOne.toString(), valTwo.toString());
   }
 
   return valOne === valTwo;
