@@ -190,4 +190,25 @@ isFunction(NaN); // false
 isFunction(() => {}); // true
 ```
 
+## Test Coverage Result
+
+| File             | % Stmts | % Branch | % Funcs | % Lines |
+| ---------------- | ------- | -------- | ------- | ------- |
+| All files        | 95.23   | 91.66    | 100     | 100     |
+| lib              | 0       | 0        | 0       | 0       |
+| index.ts         | 0       | 0        | 0       | 0       |
+| lib/enums        | 0       | 0        | 0       | 0       |
+| NodeEnum.ts      | 0       | 0        | 0       | 0       |
+| lib/helpers      | 100     | 75       | 100     | 100     |
+| node.helper.ts   | 100     | 75       | 100     | 100     |
+| lib/modules      | 94.91   | 92.64    | 100     | 100     |
+| deep-clone.ts    | 100     | 90       | 100     | 100     |
+| is-array.ts      | 100     | 100      | 100     | 100     |
+| is-boolean.ts    | 100     | 100      | 100     | 100     |
+| is-date.ts       | 100     | 100      | 100     | 100     |
+| is-deep-equal.ts | 90.62   | 90.69    | 100     | 100     |
+| is-function.ts   | 100     | 100      | 100     | 100     |
+| is-number.ts     | 100     | 100      | 100     | 100     |
+| is-object.ts     | 100     | 100      | 100     | 100     |
+
 _created by Ahmet ilhan_
