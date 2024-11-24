@@ -1,7 +1,7 @@
 import NodeEnum from "../enums/NodeEnum";
 import getNode from "../helpers/node.helper";
 
-const isDate = (val: any): boolean => {
+const isDate = (val: unknown): val is Date => {
   return typeof val === "object" && getNode(val) === NodeEnum.DATE;
 };
 

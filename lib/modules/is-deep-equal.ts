@@ -1,32 +1,29 @@
-import { isArray, isDate, isFunction, isObject } from "..";
+import { hasPlainObjectRecord, isArray, isDate, isFunction } from "..";
+import isPlainObject from "./is-plain-object";
 
-const isDeepEqual = (valOne: any, valTwo: any): boolean => {
+const isDeepEqual = (valOne: unknown, valTwo: unknown): boolean => {
   if (valOne === valTwo) return true;
   if (typeof valOne !== typeof valTwo || valOne === null || valTwo === null)
     return false;
   if (
-    isObject(valOne) &&
-    isObject(valTwo) &&
-    !Object.keys(valOne).length &&
-    !Object.keys(valTwo).length &&
-    !isDate(valOne) &&
-    !isDate(valTwo)
+    isPlainObject(valOne) &&
+    isPlainObject(valTwo) &&
+    !hasPlainObjectRecord(valOne) &&
+    !hasPlainObjectRecord(valTwo)
   )
     return true;
   if (isDate(valOne) && isDate(valTwo)) {
-    valOne = valOne as Date;
-    valTwo = valTwo as Date;
     return isDeepEqual(valOne.getTime(), valTwo.getTime());
   } else if (isArray(valOne) && isArray(valTwo)) {
     if (!valOne.length && !valTwo.length) return true;
     else if (valOne.length !== valTwo.length) return false;
-    let _i = 0;
-    while (_i < valOne.length) {
-      if (!isDeepEqual(valOne[_i], valTwo[_i])) return false;
-      _i++;
+    let index = 0;
+    while (index < valOne.length) {
+      if (!isDeepEqual(valOne[index], valTwo[index])) return false;
+      index++;
     }
     return true;
-  } else if (isObject(valOne) && isObject(valTwo)) {
+  } else if (isPlainObject(valOne) && isPlainObject(valTwo)) {
     if (Object.keys(valOne).length !== Object.keys(valTwo).length) return false;
     for (const key in valOne) {
       if (!isDeepEqual(valOne[key], valTwo[key])) return false;

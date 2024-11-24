@@ -6,7 +6,8 @@ import isDate from "./modules/is-date";
 import isDeepEqual from "./modules/is-deep-equal";
 import isFunction from "./modules/is-function";
 import isNumber from "./modules/is-number";
-
+import isPlainObject from "./modules/is-plain-object";
+import hasPlainObjectRecord from "./modules/has-plain-object-record";
 export {
   deepClone,
   isArray,
@@ -16,4 +17,6 @@ export {
   isDeepEqual,
   isFunction,
   isNumber,
+  isPlainObject,
+  hasPlainObjectRecord,
 };
