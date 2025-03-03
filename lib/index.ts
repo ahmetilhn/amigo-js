@@ -8,6 +8,7 @@ import isFunction from "./modules/is-function";
 import isNumber from "./modules/is-number";
 import isPlainObject from "./modules/is-plain-object";
 import hasPlainObjectRecord from "./modules/has-plain-object-record";
+import sleep from "./modules/sleep";
 export {
   deepClone,
   isArray,
@@ -19,4 +20,5 @@ export {
   isNumber,
   isPlainObject,
   hasPlainObjectRecord,
+  sleep,
 };
