@@ -41,6 +41,22 @@ expect(clonedVal).not.toBe({ name: "test" }); // reference equal
 expect(clonedVal).toEqual(clonedVal); // soft equal
 ```
 
+### sleep
+Wait for the execution process as long as you want
+
+###### Function Signature
+```ts
+sleep(time: number): Promise<void>
+```
+
+###### Examples
+```js
+const jobEverySecond = async () => {
+  // Codes
+  await sleep(1000) // sleep for 1 second
+}
+```
+
 ## Compare
 
 ### isDeepEqual
@@ -72,6 +88,7 @@ isDeepEqual(["john"], ["john"]); // true
 
 isDeepEqual([{ key: "value" }], [{ key: "value" }]); // true
 ```
+
 
 ## Type Check
 
