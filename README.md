@@ -29,13 +29,13 @@ Clone data from any data (disconnect any data binding)
 
 ###### Function Signature
 
-```js
+```ts
 deepClone(val: any): typeof val
 ```
 
 ###### Examples
 
-```js
+```ts
 const clonedVal = deepClone({ name: "test" });
 expect(clonedVal).not.toBe({ name: "test" }); // reference equal
 expect(clonedVal).toEqual(clonedVal); // soft equal
@@ -49,8 +49,24 @@ Wait for the execution process as long as you want
 sleep(time: number): Promise<void>
 ```
 
+### isServer
+
+###### Function Signature
+```ts
+// it should return true on node runtime
+isServer() // true
+```
+
+### isClient
+
+###### Function Signature
+```ts
+// it should return true on browser
+isClient() // true
+```
+
 ###### Examples
-```js
+```ts
 const jobEverySecond = async () => {
   // Codes
   await sleep(1000) // sleep for 1 second
@@ -65,13 +81,13 @@ Checks the equality of two values.
 
 ###### Function Signature
 
-```js
+```ts
 isDeepEqual(valOne: any, valTwo: any): boolean
 ```
 
 ###### Examples
 
-```js
+```ts
 isDeepEqual(10, 10); // true
 
 isDeepEqual("test", 1); // false
@@ -98,13 +114,13 @@ Check if val is an object
 
 ###### Function Signature
 
-```js
+```ts
 isObject(val: any): boolean
 ```
 
 ###### Examples
 
-```js
+```ts
 isObject([]); // true
 isObject(null); // false
 isObject(undefined); // false
@@ -119,13 +135,13 @@ Check if val is an date
 
 ###### Function Signature
 
-```js
+```ts
 isDate(val: any): boolean
 ```
 
 ###### Examples
 
-```js
+```ts
 isDate(Date); // false
 isDate(null); // false
 isDate("12-22-2023"); // false
@@ -138,13 +154,13 @@ Check if val is true or false (boolean)
 
 ###### Function Signature
 
-```js
+```ts
 isBoolean(val: any): boolean
 ```
 
 ###### Examples
 
-```js
+```ts
 isBoolean(null); // false
 isBoolean(false); // true
 isBoolean(true); // true
@@ -158,13 +174,13 @@ Check if val is an array
 
 ###### Function Signature
 
-```js
+```ts
 isArray(val: any): boolean
 ```
 
 ###### Examples
 
-```js
+```ts
 isArray(null); // false
 isArray({}); // false
 isArray([]); // true
@@ -177,13 +193,13 @@ Check if val is an number
 
 ###### Function Signature
 
-```js
+```ts
 isNumber(val: any): boolean
 ```
 
 ###### Examples
 
-```js
+```ts
 isNumber(null); // false
 isNumber(NaN); // true
 isNumber(1); // true
@@ -196,16 +212,57 @@ Check if val is an function
 
 ###### Function Signature
 
-```js
+```ts
 isFunction(val: any): boolean
 ```
 
 ###### Examples
 
-```js
+```ts
 isFunction(NaN); // false
 isFunction(() => {}); // true
 ```
+
+### isUndefined
+
+Check if val isn't defined
+
+###### Function Signature
+
+```ts
+isUndefined(val: any): boolean
+```
+
+###### Examples
+
+```ts
+const user = {
+  name: "John",
+}
+isUndefined(user.name); // false
+isUndefined(user.lastName); // true
+```
+
+### isDefined
+
+Check if val is defined
+
+###### Function Signature
+
+```ts
+isDefined(val: any): boolean
+```
+
+###### Examples
+
+```ts
+const user = {
+  name: "John",
+}
+isDefined(user.name); // true
+isDefined(user.lastName); // false
+```
+
 
 ## Test Coverage Result
 
