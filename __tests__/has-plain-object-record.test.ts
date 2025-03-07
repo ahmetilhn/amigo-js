@@ -1,4 +1,4 @@
-import hasPlainObjectRecord from "../lib/modules/has-plain-object-record";
+import hasPlainObjectRecord from "@/modules/has-plain-object-record";
 
 describe("hasPlainObjectRecord tests", () => {
   test("it should return false when got empty plain object", () => {

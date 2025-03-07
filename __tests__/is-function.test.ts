@@ -1,4 +1,4 @@
-import isFunction from "../lib/modules/is-function";
+import isFunction from "@/modules/is-function";
 describe("isFunction tests", () => {
   test("should return false while param is equal NaN", () => {
     expect(isFunction(NaN)).toBeFalsy();

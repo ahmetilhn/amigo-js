@@ -1,4 +1,4 @@
-import isNumber from "../lib/modules/is-number";
+import isNumber from "@/modules/is-number";
 describe("isNumber tests", () => {
   test("should return false while param is equal object", () => {
     expect(isNumber({})).toBeFalsy();

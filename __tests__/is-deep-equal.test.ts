@@ -1,4 +1,4 @@
-import isDeepEqual from "./../lib/modules/is-deep-equal";
+import isDeepEqual from "@/modules/is-deep-equal";
 describe("isDeepEqual tests", () => {
   test("should return false", () => {
     expect(isDeepEqual("test", "Test")).toBeFalsy();
@@ -100,10 +100,10 @@ describe("isDeepEqual tests", () => {
     expect(
       isDeepEqual(
         function () {
-          return this.name + Math.random().toString(36).substr(2, 9);
+          return Math.random().toString(36).substr(2, 9);
         },
         function () {
-          return this.name + Math.random().toString(36).substr(2, 9);
+          return Math.random().toString(36).substr(2, 9);
         }
       )
     ).toBeTruthy();

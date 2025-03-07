@@ -5,6 +5,15 @@ module.exports = {
   },
   testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.ts?$",
   moduleFileExtensions: ["ts", "js", "json", "node"],
+  moduleNameMapper: {
+    "^@/(.*)$": "<rootDir>/lib/$1",
+  },
+  global: {
+    branches: 94,
+    functions: 100,
+    lines: 100,
+    statements: 97,
+  },
   collectCoverage: true,
   coverageDirectory: "coverage",
 };

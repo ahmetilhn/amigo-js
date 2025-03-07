@@ -1,4 +1,4 @@
-import deepClone from "../lib/modules/deep-clone";
+import deepClone from "@/modules/deep-clone";
 describe("deepClone tests", () => {
   test("should return object after deepClone", () => {
     const clonedVal = deepClone({ name: "test" });

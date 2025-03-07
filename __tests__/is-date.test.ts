@@ -1,4 +1,4 @@
-import isDate from "../lib/modules/is-date";
+import isDate from "@/modules/is-date";
 
 describe("isDate tests", () => {
   test("should return false", () => {

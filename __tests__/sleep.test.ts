@@ -1,4 +1,4 @@
-import sleep from "../lib/modules/sleep";
+import sleep from "@/modules/sleep";
 describe("sleep tests", () => {
   test("it should sleep for 1 second", async () => {
     const startTime = performance.now();

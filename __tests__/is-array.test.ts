@@ -1,4 +1,4 @@
-import isArray from "../lib/modules/is-array";
+import isArray from "@/modules/is-array";
 describe("isArray  tests", () => {
   test("should return false while param is equal object", () => {
     expect(isArray({})).toBeFalsy();
