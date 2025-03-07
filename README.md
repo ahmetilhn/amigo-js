@@ -42,9 +42,11 @@ expect(clonedVal).toEqual(clonedVal); // soft equal
 ```
 
 ### sleep
+
 Wait for the execution process as long as you want
 
 ###### Function Signature
+
 ```ts
 sleep(time: number): Promise<void>
 ```
@@ -52,25 +54,28 @@ sleep(time: number): Promise<void>
 ### isServer
 
 ###### Function Signature
+
 ```ts
 // it should return true on node runtime
-isServer() // true
+isServer(); // true
 ```
 
 ### isClient
 
 ###### Function Signature
+
 ```ts
 // it should return true on browser
-isClient() // true
+isClient(); // true
 ```
 
 ###### Examples
+
 ```ts
 const jobEverySecond = async () => {
   // Codes
-  await sleep(1000) // sleep for 1 second
-}
+  await sleep(1000); // sleep for 1 second
+};
 ```
 
 ## Compare
@@ -104,7 +109,6 @@ isDeepEqual(["john"], ["john"]); // true
 
 isDeepEqual([{ key: "value" }], [{ key: "value" }]); // true
 ```
-
 
 ## Type Check
 
@@ -238,7 +242,7 @@ isUndefined(val: any): boolean
 ```ts
 const user = {
   name: "John",
-}
+};
 isUndefined(user.name); // false
 isUndefined(user.lastName); // true
 ```
@@ -258,31 +262,16 @@ isDefined(val: any): boolean
 ```ts
 const user = {
   name: "John",
-}
+};
 isDefined(user.name); // true
 isDefined(user.lastName); // false
 ```
 
-
 ## Test Coverage Result
 
-| File             | % Stmts | % Branch | % Funcs | % Lines |
-| ---------------- | ------- | -------- | ------- | ------- |
-| All files        | 95.23   | 91.66    | 100     | 100     |
-| lib              | 0       | 0        | 0       | 0       |
-| index.ts         | 0       | 0        | 0       | 0       |
-| lib/enums        | 0       | 0        | 0       | 0       |
-| NodeEnum.ts      | 0       | 0        | 0       | 0       |
-| lib/helpers      | 100     | 75       | 100     | 100     |
-| node.helper.ts   | 100     | 75       | 100     | 100     |
-| lib/modules      | 94.91   | 92.64    | 100     | 100     |
-| deep-clone.ts    | 100     | 90       | 100     | 100     |
-| is-array.ts      | 100     | 100      | 100     | 100     |
-| is-boolean.ts    | 100     | 100      | 100     | 100     |
-| is-date.ts       | 100     | 100      | 100     | 100     |
-| is-deep-equal.ts | 90.62   | 90.69    | 100     | 100     |
-| is-function.ts   | 100     | 100      | 100     | 100     |
-| is-number.ts     | 100     | 100      | 100     | 100     |
-| is-object.ts     | 100     | 100      | 100     | 100     |
+branches: 94
+functions: 100
+lines: 100
+statements: 97
 
 _created by Ahmet ilhan_
